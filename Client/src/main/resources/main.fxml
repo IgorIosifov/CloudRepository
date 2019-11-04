@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootNode"  fillWidth="false" maxHeight="800.0" maxWidth="800.0" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="800.0" style= "-fx-background-image:url(clouds.png)"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <children>
+           <VBox fx:id="authorize" alignment="CENTER_LEFT" maxWidth="200" style="-fx-background-color: none;" translateX="600.0">
+              <children>
+                  <TextField fx:id="loginField" promptText="login" />
+                  <PasswordField fx:id="passwordField" onAction="#tryToAuth" promptText="pass" />
+                  <Button fx:id="log_in" alignment="CENTER" onAction="#tryToAuth" prefWidth="Infinity" text="IN" textAlignment="CENTER" />
+                  <Button fx:id="log_out" alignment="CENTER" contentDisplay="CENTER" onAction="#logOut" prefWidth="Infinity" text="OUT" textAlignment="CENTER" />
+              </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+           </VBox>
+   
+       <HBox alignment="CENTER" translateX="300.0">
+      <children>
+              <Button fx:id="download" onAction="#pressOnDownloadBtn" text="Download" textAlignment="RIGHT" />
+              <Button fx:id="delete" focusTraversable="false" onAction="#pressOnDeleteBtn" text="Delete" textAlignment="RIGHT" />
+              <Button fx:id="upload" onAction="#pressOnUploadBtn" text="Upload" textAlignment="RIGHT" />
+      </children>
+       </HBox>
+   
+       <VBox>
+      <children>
+              <HBox >
+                 <children>
+                     <VBox fx:id="localFiles" style="-fx-background-color: green">
+                        <children>
+                            <TextField alignment="CENTER" editable="false" prefHeight="4" style="-fx-background-color: #d7ffff" text="Local files" />
+                            <ListView fx:id="localFileList" maxWidth="400.0" minWidth="400.0" prefHeight="664.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
+                        </children>
+                     </VBox>
+         
+                     <VBox fx:id="remoteFiles" prefHeight="431.0" prefWidth="601.0" style="-fx-background-color: red">
+            <children>
+                            <TextField alignment="CENTER" editable="false" prefHeight="4" style="-fx-background-color: #2effe4" text="Remote files" />
+                            <ListView fx:id="remoteFileList" VBox.vgrow="ALWAYS" />
+            </children>
+                     </VBox>
+                 </children>
+      
+              </HBox>
+      </children>
+       </VBox>
+       <TextField fx:id="infoPanel" alignment="BOTTOM_CENTER" editable="false" prefHeight="31.0" prefWidth="816.0" />
+   </children>
+</VBox>
